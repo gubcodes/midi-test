@@ -1,0 +1,17 @@
+body {
+  background-color: bisque;
+}
+
+#keyboard {
+  display: grid;
+  grid-template-columns: repeat(88, 1fr);
+}
+
+.key {
+  border: 1px solid black;
+  height: 48px;
+  background-color: white;
+}
+.key.black {
+  background-color: black;
+}
