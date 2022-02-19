@@ -284,8 +284,8 @@ function play(status, frequency) {
       device.innerHTML = 'no device';
     } else {
       device.innerHTML = midiOutput.name;
-      console.log(midiOutput.state);
-      console.log(midiOutput.connection)
+      // console.log(midiOutput.state);
+      // console.log(midiOutput.connection);
       console.log(signal);
       midiOutput.send(signal, delay);
     };
