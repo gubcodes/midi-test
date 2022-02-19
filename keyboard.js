@@ -7,14 +7,11 @@ const kb = document.getElementById('keyboard');
 Object.entries(d.f).forEach(entry => {
   const kbKey = document.createElement('div');
   const [key, value] = entry;
-  console.log(key, value);
-  // console.log(key, d.vf[key]);
   kb.appendChild(kbKey);
   kbKey.classList.add('key');
   kbKey.setAttribute('id', key);
   if ( blacks.includes(key) ) {
     kbKey.classList.add('black');
-    console.log('black');
   };
   kbKey.setAttribute('onclick', 'play(1,'+ key + ')')
 });
