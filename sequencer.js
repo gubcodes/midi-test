@@ -4,6 +4,7 @@ let interval = 125; //120 bpm at 1/16 (16 steps)
 let count;
 let checkbox;
 let frequency;
+let defSel = 60;
 
 // creating steps (checkboxes, labels)
 for (let i = 1; i <= steps; i++) {
@@ -30,6 +31,9 @@ for (let i = 1; i <= steps; i++) {
     // option.value = freq[val]; // this would be binary value
     option.value = val;
     option.text = val;
+    if ( val == defSel ) {
+      option.setAttribute('selected', 'selected')
+    }
     select.appendChild(option);
   }
 }
@@ -65,7 +69,7 @@ function sequencerSpeed(element) {
 }
 
 // todo:
-// add frequency options to sequencer
+// add note names to dropdowns
 // add speed (bpm if possible - lots o math) option
 // add amount of steps option
 // add ability to make more lines (measures) of steps - and then how manys steps in each measure
