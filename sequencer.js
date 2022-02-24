@@ -19,16 +19,14 @@ for (let i = 1; i <= steps; i++) {
   label.setAttribute('for', i);
   label.innerHTML = i;
   single.appendChild(label);
+  
   // creating frequency dropdowns
   let select = document.createElement('select');
-  // console.log(select);
   single.appendChild(select);
   select.name = 'freq';
   select.id = 'freq' + i;
-  // console.log(freq);
   for (const val in freq) {
     var option = document.createElement("option");
-    // option.value = freq[val]; // this would be binary value
     option.value = val;
     option.text = val;
     if ( val == defSel ) {
