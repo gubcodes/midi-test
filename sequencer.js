@@ -1,11 +1,11 @@
 const seq = document.getElementById('sequencer');
 let steps = 16;
-// let interval = 125; //120 bpm at 1/16 (16 steps)
-let interval = 300;
+let interval = 125; //120 bpm at 1/16 (16 steps)
 let count;
 let checkbox;
-// console.log(interval);
+let frequency;
 
+// creating steps (checkboxes, labels)
 for (let i = 1; i <= steps; i++) {
   let single = document.createElement('div');
   let input = document.createElement('INPUT');
@@ -18,8 +18,23 @@ for (let i = 1; i <= steps; i++) {
   label.setAttribute('for', i);
   label.innerHTML = i;
   single.appendChild(label);
+  // creating frequency dropdowns
+  let select = document.createElement('select');
+  // console.log(select);
+  single.appendChild(select);
+  select.name = 'freq';
+  select.id = 'freq' + i;
+  // console.log(freq);
+  for (const val in freq) {
+    var option = document.createElement("option");
+    // option.value = freq[val]; // this would be binary value
+    option.value = val;
+    option.text = val;
+    select.appendChild(option);
+  }
 }
 
+// starting sequencer
 function sequencerPlay() {
   console.log('sequencer start');
   for (i = 1; i <= steps; i++) {
@@ -31,24 +46,28 @@ function sequencerPlay() {
   }, interval * steps)
 }
 
+// sequencer steps
 function sequencerSpeed(element) {
   setTimeout(function() {
     checkbox = element.firstChild.checked;
+    frequency = element.lastChild.value;
     if(checkbox) {
-      console.log('checked');
-      play(1, 60);
+      play(1, frequency);
     }
     element.classList.add('single-current');
     setTimeout(function() {
       if(checkbox) {
-        console.log('checked');
-        play(0, 60);
+        play(0, frequency);
       }
       element.classList.remove('single-current')
     }, interval);
   }, interval * element.id);
 }
 
-// todo: redo the functions above^
-// create async function to fire sequencerPlay again after all.forEach finishes
+// todo:
+// add frequency options to sequencer
+// add speed (bpm if possible - lots o math) option
+// add amount of steps option
+// add ability to make more lines (measures) of steps - and then how manys steps in each measure
+// add key objects to filter frequencies available
 // conditionally change sequencerSpeed interval to 0 if it is the first element (so that it starts immediately when clicking "play") - only use "interval * element.id" for every element after the first
