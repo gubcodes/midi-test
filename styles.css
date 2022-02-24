@@ -28,7 +28,7 @@ body {
 }
 .single {
   border-bottom: 10px solid transparent;
-  /* display: flex; */
+  display: flex;
   flex-direction: column;
   margin: auto;
   /* text-align: center; */
