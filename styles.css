@@ -37,3 +37,7 @@ body {
 .single-current {
   border-bottom: 10px solid black;
 }
+
+ul {
+  max-width: 500px;
+}

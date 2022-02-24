@@ -5,6 +5,7 @@ let count;
 let checkbox;
 let frequency;
 let defSel = 60;
+let seqStatus = false;
 
 // creating steps (checkboxes, labels)
 for (let i = 1; i <= steps; i++) {
@@ -19,7 +20,7 @@ for (let i = 1; i <= steps; i++) {
   label.setAttribute('for', i);
   label.innerHTML = i;
   single.appendChild(label);
-  
+
   // creating frequency dropdowns
   let select = document.createElement('select');
   single.appendChild(select);
@@ -36,17 +37,25 @@ for (let i = 1; i <= steps; i++) {
   }
 }
 
+// stopping sequencer
+function sequencerStop() {
+  seqStatus = false;
+}
+
 // starting sequencer
 function sequencerPlay() {
-  console.log('sequencer start');
+  seqStatus = true;
   for (i = 1; i <= steps; i++) {
     e = document.getElementById(`${i}`);
     sequencerSpeed(e);
   }
   setTimeout(function() {
-    sequencerPlay()
+    if ( seqStatus ) {
+      sequencerPlay();
+    }
   }, interval * steps)
 }
+
 
 // sequencer steps
 function sequencerSpeed(element) {

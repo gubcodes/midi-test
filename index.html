@@ -20,20 +20,27 @@
   <br>
   <div id="sequencer"></div>
   <button onClick="sequencerPlay()">play</button>
+  <button onClick="sequencerStop()">stop</button>
   <br><br>
   notes:
   <ul>
     <li>
+      keyboard and sequencer operate independently
+    </li>
+    <li>
       each box checked should play the selected frequency for the length of the step
     </li>
     <li>
-      speed set to 120bpm (hopefully)
+      speed set to 120bpm (hopefully) with each step being a 16th note
     </li>
     <li>
       velocity set to 99 (out of 128)
     </li>
     <li>
-      known bug: 1 and 16 are weird about sending an OFF signal
+      you can start multiple threads on sequencer for potential delay chaos
+    </li>
+    <li>
+      BUG: 1 and 16 are weird about sending an off signal
     </li>
   </ul>
   
