@@ -274,7 +274,7 @@ navigator.requestMIDIAccess()
 })
 
 function play(status, frequency) {
-  let signal = ['0b' + st[status] + chan[1], '0b' + freq[frequency], '0b' + vel[100]]; 
+  let signal = ['0b' + st[status] + chan[0], '0b' + freq[frequency], '0b' + vel[100]]; 
 
   navigator.requestMIDIAccess()
   .then(function(midiAccess) {

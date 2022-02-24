@@ -12,9 +12,22 @@
   <p id='device-name'></p>
   <!-- <button onclick="play(1, 60)">C3 on</button>
   <button onclick="play(0, 60)">C3 off</button> -->
+  <h4>keyboard</h4>
   <div id="keyboard"></div>
+  <br>
+  <div class="divider"></div>
+  <h4>sequencer</h4>
+  <br>
+  <div id="sequencer"></div>
+  <button onClick="sequencerPlay()">play</button>
+  <p>
+    each box checked should play a middle C for the length of that step.
+    <br>
+    known bug: 1 and 16 are funky.
+  </p>
   
   <script type="text/javascript" src="midi.js"></script>
   <script type="text/javascript" src="keyboard.js"></script>
+  <script type="text/javascript" src="sequencer.js"></script>
 </body>
 </html>

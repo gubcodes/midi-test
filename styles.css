@@ -1,5 +1,6 @@
 body {
   background-color: bisque;
+  /* max-width: 1200px; */
 }
 
 #keyboard {
@@ -14,4 +15,25 @@ body {
 }
 .key.black {
   background-color: black;
+}
+
+.divider {
+  width: 100%;
+  border-bottom: 1px dotted gray;
+}
+
+#sequencer {
+  display: grid;
+  grid-template-columns: repeat(16, 1fr);
+}
+.single {
+  border-bottom: 10px solid transparent;
+  display: flex;
+  flex-direction: column;
+  margin: auto;
+  text-align: center;
+}
+
+.single-current {
+  border-bottom: 10px solid black;
 }
