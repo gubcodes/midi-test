@@ -1,6 +1,7 @@
 const seq = document.getElementById('sequencer');
 let steps = 16;
 let interval = 125; //120 bpm at 1/16 (16 steps)
+// let interval = 250; //for slow testing
 let count;
 let checkbox;
 let frequency;
@@ -63,19 +64,22 @@ function sequencerSpeed(element) {
     checkbox = element.firstChild.checked;
     frequency = element.lastChild.value;
     if(checkbox) {
-      play(1, frequency);
+      play(1, frequency, 100);
+      console.log('on');
     }
     element.classList.add('single-current');
     setTimeout(function() {
       if(checkbox) {
-        play(0, frequency);
+        play(0, frequency, 0); // this is the funky culprit of not hearing notes with VCA down, just tried changing it to ON
+        console.log('off');
       }
       element.classList.remove('single-current')
-    }, interval);
+    }, interval * 1.25);
   }, interval * element.id);
 }
 
 // todo:
+// add ability to set length of note played (as a % of the interval)
 // add note names to dropdowns
 // add speed (bpm if possible - lots o math) option
 // add amount of steps option

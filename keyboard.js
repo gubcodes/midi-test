@@ -13,5 +13,5 @@ Object.entries(d.f).forEach(entry => {
   if ( blacks.includes(key) ) {
     kbKey.classList.add('black');
   };
-  kbKey.setAttribute('onclick', 'play(1,'+ key + ')')
+  kbKey.setAttribute('onclick', 'play(1,'+ key + ',' + 100 + ')')
 });

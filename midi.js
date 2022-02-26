@@ -273,8 +273,8 @@ navigator.requestMIDIAccess()
   };
 })
 
-function play(status, frequency) {
-  let signal = ['0b' + st[status] + chan[0], '0b' + freq[frequency], '0b' + vel[100]]; 
+function play(status, frequency, velocity) {
+  let signal = ['0b' + st[status] + chan[0], '0b' + freq[frequency], '0b' + vel[velocity]]; 
 
   navigator.requestMIDIAccess()
   .then(function(midiAccess) {
