@@ -30,7 +30,7 @@
       keyboard and sequencer operate independently
     </li>
     <li>
-      each box checked should play the selected frequency for 125% of the length of the step
+      each box checked should play the selected frequency for 125% of the length of the step, unless the immediate next step interrupts it
     </li>
     <li>
       speed set to 120bpm (hopefully) with each step being a 16th note
@@ -39,7 +39,7 @@
       velocity set to 99 (out of 128)
     </li>
     <li>
-      you can start multiple threads on sequencer for potential delay chaos
+      you can start multiple threads on sequencer for potential delay chaos - works best with some empty steps, each thread will be fighting the others
     </li>
     <li>
       BUG: first play of step 1 doesn't shut off that frequency until 2nd play through
