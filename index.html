@@ -21,6 +21,8 @@
   <div id="sequencer"></div>
   <button onClick="sequencerPlay()">play</button>
   <button onClick="sequencerStop()">stop</button>
+  <button onClick="saveSession()">save</button>
+  <button onClick="loadSession()">load</button>
   <br><br>
   notes:
   <ul>
@@ -28,7 +30,7 @@
       keyboard and sequencer operate independently
     </li>
     <li>
-      each box checked should play the selected frequency for 95% of the length of the step
+      each box checked should play the selected frequency for 125% of the length of the step
     </li>
     <li>
       speed set to 120bpm (hopefully) with each step being a 16th note
@@ -47,5 +49,6 @@
   <script type="text/javascript" src="midi.js"></script>
   <script type="text/javascript" src="keyboard.js"></script>
   <script type="text/javascript" src="sequencer.js"></script>
+  <script type="text/javascript" src="local-storage.js"></script>
 </body>
 </html>
