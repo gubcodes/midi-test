@@ -12,7 +12,8 @@ function saveSession() {
         "fr"      : singleStep.lastElementChild.value
     }
     localStorage.setItem(i, JSON.stringify(sessionUpdate));
-  }
+  };
+  alert('session saved in browser storage.\nuse the load button to restore this session. \n\nsaving again will overwrite this session. \ndeleting browser data will erase your saved session.');
 }
 
 function loadSession() {
