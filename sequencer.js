@@ -1,6 +1,6 @@
 const seq = document.getElementById('sequencer');
 let steps = 16;
-let interval = 125; //120 bpm at 1/16 (16 steps)
+// let interval = 125; //120 bpm at 1/16 (16 steps)
 // let interval = 250; //for slow testing
 let count;
 let checkbox;

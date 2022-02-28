@@ -17,12 +17,17 @@
   <br>
   <div class="divider"></div>
   <h4>sequencer</h4>
+  <label for="bpm">bpm</label>
+  <input id="bpm" type="number" name="bpm" value="120">
+  <!-- can add min and max attributes to bpm above -->
+  <br>
   <br>
   <div id="sequencer"></div>
   <button onClick="sequencerPlay()">play</button>
   <button onClick="sequencerStop()">stop</button>
   <button onClick="saveSession()">save</button>
   <button onClick="loadSession()">load</button>
+  <span id="save-message"></span>
   <br><br>
   notes:
   <ul>
@@ -39,6 +44,12 @@
       velocity set to 99 (out of 128)
     </li>
     <li>
+      "save" stores a snapshot of your current session in your browser's local storage for you to access later. saving again overwrites the snapshot (you can only have one session saved at a time). deleting browser data will erase any sessions you have saved.
+    </li>
+    <li>
+      "load" will load any session you have saved.
+    </li>
+    <li>
       you can start multiple threads on sequencer for potential delay chaos - works best with some empty steps, each thread will be fighting the others
     </li>
     <li>
@@ -48,6 +59,7 @@
   
   <script type="text/javascript" src="midi.js"></script>
   <script type="text/javascript" src="keyboard.js"></script>
+  <script type="text/javascript" src="bpm.js"></script>
   <script type="text/javascript" src="sequencer.js"></script>
   <script type="text/javascript" src="local-storage.js"></script>
 </body>
